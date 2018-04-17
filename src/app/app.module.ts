@@ -8,10 +8,14 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './shared-components/login/login.component';
+import { DashboardComponent } from './container-components/dashboard/dashboard.component';
+import { DefaultComponent } from './container-components/default/default.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent
   ],
   imports: [
     BrowserModule,
