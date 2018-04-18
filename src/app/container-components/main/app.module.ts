@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgForageModule} from 'ngforage';
+import { FormsModule }   from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 // custom modules
 
@@ -32,6 +34,8 @@ import { DropdownDirective } from '../../directives/dropdown.directive';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     NgForageModule.forRoot()

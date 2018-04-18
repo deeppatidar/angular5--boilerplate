@@ -1,22 +1,24 @@
 <!-- Login form -->
 <div class="loginForm">
-  <form class="login">
+  <form class="login" #form="ngForm" (ngSubmit)="login(form)">
       <p class="h5 text-center mb-4">Sign in</p>
 
       <div class="md-form">
           <i class="fa fa-envelope prefix grey-text"></i>
-          <input type="text" id="defaultForm-email" class="form-control" mdbActive>
-          <label for="defaultForm-email">Your email</label>
+          <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control" mdbActive mdbInputValidate required>
+          <label for="email">Your email</label>
+          <span class="inputVal text-danger" *ngIf="showEmailErrorMsg">Email can't be blank</span>
       </div>
 
       <div class="md-form">
           <i class="fa fa-lock prefix grey-text"></i>
-          <input type="password" id="defaultForm-pass" class="form-control" mdbActive>
-          <label for="defaultForm-pass">Your password</label>
+          <input type="password" [(ngModel)]="pass" name="pass" id="pass" class="form-control" mdbActive mdbInputValidate required>
+          <label for="pass">Your password</label>
+          <span class="inputVal text-danger" *ngIf="showPassErrorMsg">Password can't be blank</span>
       </div>
 
       <div class="text-center">
-          <button class="btn btn-default waves-light" mdbRippleRadius>Login</button>
+          <button type="submit" class="btn btn-default waves-light" mdbRippleRadius>Login</button>
       </div>
   </form>
 </div>
