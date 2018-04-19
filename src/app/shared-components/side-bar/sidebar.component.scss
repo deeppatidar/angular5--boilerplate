@@ -1,0 +1,44 @@
+
+.vertical-menu {
+    color: #FFFFFF;
+    width: 250px;
+    height: 100%;
+    a {
+        color: #FFFFFF;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        &:hover {
+            background-color: #ccc;
+        }
+        &.active {
+            color: white;
+        }
+    }
+    .search-form input[type="text"] {
+      border-bottom: 1px solid #fff;
+      color: #FFFFFF;
+      font-weight: 300;
+      padding-left: 30px;
+      width: 215px;
+  }
+  .waves-effect {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+    z-index: 1;
+}
+.waves-light {
+  width: 240px;
+}
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+.btn-default{
+  &:hover {
+      background-color: lightblue !important;
+  }
+}
+}

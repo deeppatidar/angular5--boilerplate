@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalforageService } from '../../services/utils/localforage.service';
 import { AppService } from '../../services/http/app.service';
 
@@ -10,7 +11,7 @@ import { AppService } from '../../services/http/app.service';
 export class LoginComponent implements OnInit {
   showEmailErrorMsg:boolean = false;
   showPassErrorMsg:boolean = false;
-  constructor(private localforageService: LocalforageService, private appService: AppService) {
+  constructor(private localforageService: LocalforageService, private appService: AppService, private router: Router) {
   }
 
   ngOnInit() {
@@ -29,12 +30,11 @@ export class LoginComponent implements OnInit {
             this.showEmailErrorMsg = true;
         }
       } else {
-
         this.localforageService.setItem({key: 'isLoggedIn' , value: true}).then(()=> {
-            this.appService.loginUser(value).subscribe(success => {
-              console.log(success)
-            });
-            //this.router.navigate(['home']);
+        // this.appService.loginUser(value).subscribe(success => {
+        //   console.log(success)
+        // });
+        this.router.navigate(['default']);
         });
       }
   }
