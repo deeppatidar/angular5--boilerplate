@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalforageService } from '../../services/utils/localforage.service';
+import { AppService } from '../../services/http/app.service';
 
 @Component({
   selector: 'app-login',
@@ -7,17 +9,34 @@ import { LocalforageService } from '../../services/utils/localforage.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private localforageService: LocalforageService) {
-    // let _this = this;
-    // this.lfsService.setItem({key: 'loginData' , value: 'data', expTime: 60*2}).then(function () {
-    // _this.lfsService.getItem({key: 'loginData'}).then(function(data) {
-    //   console.log(data);
-    //     });
-    // });
+  showEmailErrorMsg:boolean = false;
+  showPassErrorMsg:boolean = false;
+  constructor(private localforageService: LocalforageService, private appService: AppService, private router: Router) {
   }
 
   ngOnInit() {
   }
 
+  login({value, valid }) {
+      this.showEmailErrorMsg = false;
+      this.showPassErrorMsg = false;
+      if(!valid) {
+        if(!value.emailVal && !value.passwordVal) {
+            this.showEmailErrorMsg = true;
+            this.showPassErrorMsg = true;
+        }else if(!value.passwordVal){
+            this.showPassErrorMsg = true;
+        } else if(!value.emailVal) {
+            this.showEmailErrorMsg = true;
+        }
+      } else {
+        console.log('hello')
+        this.localforageService.setItem({key: 'isLoggedIn' , value: true}).then(()=> {
+        // this.appService.loginUser(value).subscribe(success => {
+        //   console.log(success)
+        // });
+        this.router.navigate(['default']);
+        });
+      }
+  }
 }
