@@ -15,6 +15,7 @@ import { LoginComponent } from '../../feature-components/login/login.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { DefaultComponent } from '../default/default.component';
 import { HeaderComponent } from '../../feature-components/header/header.component';
+import { FooterComponent } from '../../feature-components/footer/footer.component';
 
 
 // services
@@ -32,7 +33,7 @@ import { DropdownDirective } from '../../directives/dropdown.directive';
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DashboardComponent, DefaultComponent, HeaderComponent, FilterPipe, DropdownDirective
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent, HeaderComponent, FooterComponent, FilterPipe, DropdownDirective
   ],
   imports: [
     BrowserModule,
