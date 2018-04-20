@@ -1,9 +1,11 @@
 // built-in modules
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA  } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { MDBBootstrapModules } from 'ng-pro';
 import { NgForageModule} from 'ngforage';
+import { FormsModule }   from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 // custom modules
 
@@ -13,6 +15,7 @@ import { LoginComponent } from '../../feature-components/login/login.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { DefaultComponent } from '../default/default.component';
 import { HeaderComponent } from '../../feature-components/header/header.component';
+import { FooterComponent } from '../../feature-components/footer/footer.component';
 
 // services
 import { AuthGuard } from '../../services/utils/auth.guard.service';
@@ -29,9 +32,10 @@ import { DropdownDirective } from '../../directives/dropdown.directive';
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FilterPipe, DropdownDirective
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     MDBBootstrapModules.forRoot(),
     AppRoutingModule,
