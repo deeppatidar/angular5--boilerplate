@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { NgForageConfig} from 'ngforage';
-import { ONESKY , ONESKYSTORAGE} from '../constants';
+import * as constant from '../constants';
 @Injectable()
-export class LocalforageconfigService {
+export class LocalforageConfigService {
 
   constructor(ngfConfig: NgForageConfig) {
-    console.log(ONESKY);
     ngfConfig.configure({
-      name: ONESKYSTORAGE,
-      storeName: ONESKY,
+      name: constant.ONESKYSTORAGE,
+      storeName: constant.ONESKY,
       cacheTime: 3000,
       size: 1024 * 1024 * 4,
       driver: [
-        // defaults to indexedDB -> webSQL -> localStorage -> sessionStorage
         NgForageConfig.DRIVER_INDEXEDDB,
         NgForageConfig.DRIVER_LOCALSTORAGE
       ]
