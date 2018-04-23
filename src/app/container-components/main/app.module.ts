@@ -28,11 +28,12 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 
 //directives
 import { DropdownDirective } from '../../directives/dropdown.directive';
+import { TableComponent } from '../../shared-components/table/table.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, TableComponent
   ],
   imports: [
     FormsModule,

@@ -1,25 +1,30 @@
-<!-- Login form -->
-<div class="loginForm">
-  <form class="login" #form="ngForm" (ngSubmit)="login(form)">
-      <p class="h5 text-center mb-4">Sign in</p>
+<div class="container-fluid h-100 bg-image">
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="login-form">
+          <form class="login" #form="ngForm" (ngSubmit)="login(form)">
+            <p class="h5 text-center mb-4">Sign in</p>
 
-      <div class="md-form">
-          <i class="fa fa-envelope prefix grey-text"></i>
-          <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control" mdbActive mdbInputValidate required>
-          <label for="email">Your email</label>
-          <span class="inputVal text-danger" *ngIf="showEmailErrorMsg">Email can't be blank</span>
-      </div>
+            <div class="md-form">
+              <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control" mdbActive mdbInputValidate email data-error="Please provide a valid email" data-success=" ">
+              <label for="email">Your email</label>
+            </div>
 
-      <div class="md-form">
-          <i class="fa fa-lock prefix grey-text"></i>
-          <input type="password" [(ngModel)]="pass" name="pass" id="pass" class="form-control" mdbActive mdbInputValidate required>
-          <label for="pass">Your password</label>
-          <span class="inputVal text-danger" *ngIf="showPassErrorMsg">Password can't be blank</span>
-      </div>
+            <div class="md-form">
+              <input type="password" [(ngModel)]="pass" name="pass" id="pass" class="form-control" mdbActive mdbInputValidate required data-error="Please provide a password" data-success=" " minLength="8">
+              <label for="pass">Your password</label>
+            </div>
 
-      <div class="text-center">
-          <button type="submit" class="btn btn-default waves-light" mdbRippleRadius>Login</button>
+            <div class="text-right forget-password">
+              <a>Forget Password?</a>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-rounded waves-light blue-gradient login-btn" mdbWavesEffect>Sign In</button>
+            </div>
+          </form>
+        </div>
       </div>
-  </form>
+    </div>
+  </div>
 </div>
-<!-- Login form -->

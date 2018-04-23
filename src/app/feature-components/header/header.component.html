@@ -1,183 +1,247 @@
-<!--Double navigation-->
 <header>
-    <!-- Sidebar navigation -->
-    <mdb-sidenav #sidenav class="sn-bg-1 fixed" [fixed]="true">
+  <mdb-sidenav #sidenav class="sn-bg-1" [fixed]="false">
+    <logo>
+      <li>
+        <div class="logo-wrapper waves-light">
+          <a href="#">
+            <img src="http://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
+          </a>
+        </div>
+      </li>
+    </logo>
 
-        <logo>
-            <li>
-                <div class="logo-wrapper waves-light">
-                    <a href="#">
-                        <img src="http://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
-                    </a>
-                </div>
-            </li>
-            <!--/. Logo -->
-        </logo>
-
-        <links>
-            <!--Social-->
-            <li>
-                <ul class="social">
-                    <li>
-                        <a class="icons-sm fb-ic">
-                            <i class="fa fa-facebook"> </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icons-sm pin-ic">
-                            <i class="fa fa-pinterest"> </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icons-sm gplus-ic">
-                            <i class="fa fa-google-plus"> </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icons-sm tw-ic">
-                            <i class="fa fa-twitter"> </i>
-                        </a>
-                    </li>
+    <links>
+      <li>
+        <ul class="social">
+          <li>
+            <a class="icons-sm fb-ic">
+              <i class="fa fa-facebook"> </i>
+            </a>
+          </li>
+          <li>
+            <a class="icons-sm pin-ic">
+              <i class="fa fa-pinterest"> </i>
+            </a>
+          </li>
+          <li>
+            <a class="icons-sm gplus-ic">
+              <i class="fa fa-google-plus"> </i>
+            </a>
+          </li>
+          <li>
+            <a class="icons-sm tw-ic">
+              <i class="fa fa-twitter"> </i>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <form class="search-form" role="search">
+          <div class="form-group md-form mt-0 pt-1 waves-light" mdbWavesEffect>
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </li>
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                <i class="fa fa-check-circle"></i> Tasks </mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
                 </ul>
-            </li>
-            <!--/Social-->
-            <!--Search Form-->
-            <li>
-                <form class="search-form" role="search">
-                    <div class="form-group md-form mt-0 pt-1 waves-light" mdbWavesEffect>
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                </form>
-            </li>
-            <!--/.Search Form-->
-            <!-- Side navigation links -->
-            <li>
-                <ul class="collapsible collapsible-accordion">
-                    <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+              </mdb-item-body>
+            </mdb-item>
 
-                        <!-- Collapsible link -->
-                        <mdb-item>
-                            <mdb-item-head mdbWavesEffect>
-                                <i class="fa fa-chevron-right"></i> Collapsible menu</mdb-item-head>
-                            <mdb-item-body>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
-                                    </li>
-                                </ul>
-                            </mdb-item-body>
-                        </mdb-item>
-
-                        <!-- Simple link -->
-                        <mdb-item class="no-collase">
-                            <mdb-item-head mdbWavesEffect>
-                                <i class="fa fa-hand-pointer-o"></i> Simple link</mdb-item-head>
-                            <mdb-item-body></mdb-item-body>
-                        </mdb-item>
-
-                        <!-- Collapsible link -->
-                        <mdb-item>
-                            <mdb-item-head mdbWavesEffect>
-                                <i class="fa fa-eye"></i> Collapsible menu 2</mdb-item-head>
-                            <mdb-item-body>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
-                                    </li>
-                                </ul>
-                            </mdb-item-body>
-                        </mdb-item>
-
-                        <!-- Simple link -->
-                        <mdb-item class="no-collase">
-                            <mdb-item-head mdbWavesEffect>
-                                <i class="fa fa-diamond"></i> Simple link 2</mdb-item-head>
-                            <mdb-item-body></mdb-item-body>
-                        </mdb-item>
-
-                    </mdb-squeezebox>
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                <i class="fa fa-calculator"></i> Quoting</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
                 </ul>
-            </li>
-            <!--/. Side navigation links -->
-        </links>
-        <div class="sidenav-bg mask-strong"></div>
-    </mdb-sidenav>
-    <!--/. Sidebar navigation -->
+              </mdb-item-body>
+            </mdb-item>
 
-    <!-- Navbar -->
-    <mdb-navbar SideClass="navbar navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav" [containerInside]="false">
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                <i class="fa fa-calendar"></i> Aircraft Schedule</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
 
-        <navlinks class="navbar-container">
-            <!-- SideNav slide-out button -->
-            <div class="float-left">
-                <a (click)="sidenav.show()" class="button-collapse-non-fixed">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-            <!--/. SideNav slide-out button -->
-        </navlinks>
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                  <i class="fa fa-users"></i> Crew Schedule</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
 
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                  <i class="fa fa-money"></i> Bank Account</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
 
-        <logo>
-            <!-- Breadcrumb-->
-            <div class="breadcrumbs breadcrumb-dn mr-auto">
-                <p>Material Design for Bootstrap</p>
-            </div>
-            <!--/. Breadcrumb-->
-        </logo>
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                <i class="fa fa-exchange"></i> Trips</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
 
-        <navlinks>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
-                <li class="nav-item">
-                    <a class="nav-link waves-light" mdbWavesEffect>
-                        <i class="fa fa-envelope"></i>
-                        <span class="clearfix d-none d-sm-inline-block">Contact</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-light" mdbWavesEffect>
-                        <i class="fa fa-comments-o"></i>
-                        <span class="clearfix d-none d-sm-inline-block">Support</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-light" mdbWavesEffect>
-                        <i class="fa fa-user"></i>
-                        <span class="clearfix d-none d-sm-inline-block">Account</span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown btn-group" dropdown>
-                    <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-        </navlinks>
-    </mdb-navbar>
-    <!--/. Navbar -->
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                <i class="fa fa-map"></i> Airport Directory</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
 
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                <i class="fa fa-flag"></i> Aircraft Directory</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
+
+            <mdb-item>
+              <mdb-item-head mdbWavesEffect>
+                <i class="fa fa-plane"></i> My Fleet</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="waves-effect" mdbWavesEffect>Link 2</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
+
+            <!-- <mdb-item class="no-collase">
+                <mdb-item-head mdbWavesEffect>
+                    <i class="fa fa-diamond"></i> Simple link 2</mdb-item-head>
+                <mdb-item-body></mdb-item-body>
+            </mdb-item> -->
+          </mdb-squeezebox>
+        </ul>
+      </li>
+    </links>
+
+    <div class="sidenav-bg mask-strong"></div>
+  </mdb-sidenav>
+
+  <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav" [containerInside]="false">
+    <navlinks class="navbar-container">
+      <div class="float-left">
+        <a (click)="sidenav.show()" class="button-collapse hidden-nav-button-collapse">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </navlinks>
+    <logo>
+      <div class="breadcrumbs breadcrumbs-hidden-nav breadcrumb-dn mr-auto">
+        <p>Material Design for Bootstrap</p>
+      </div>
+    </logo>
+
+    <navlinks>
+      <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ie-hidden-double-nav">
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>
+            <i class="fa fa-envelope"></i>
+            <span class="clearfix d-none d-sm-inline-block">Contact</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>
+            <i class="fa fa-comments-o"></i>
+            <span class="clearfix d-none d-sm-inline-block">Support</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>
+            <i class="fa fa-user"></i>
+            <span class="clearfix d-none d-sm-inline-block">Account</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown btn-group" dropdown>
+          <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Dropdown
+          </a>
+          <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </navlinks>
+  </mdb-navbar>
 </header>
-<!--/.Double navigation-->
 
-<!--Main Layout-->
 <main>
-    <div class="container-fluid mt-5">
-        <h2>Advanced Double Navigation with fixed SideNav & non-fixed Navbar:</h2>
-        <br>
-        <h5>1. Hidden side menu. Click "hamburger" icon in the top left corner to open it.</h5>
-        <h5>2. Fixed navbar. It will always stay visible on the top, even when you scroll down.</h5>
-        <div style="height: 2000px"></div>
-    </div>
+    <app-table></app-table>
 </main>
-<!--/Main layout-->

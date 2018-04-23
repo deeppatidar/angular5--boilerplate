@@ -12,7 +12,8 @@ export class LoginComponent implements OnInit {
 
   showEmailErrorMsg: boolean;
   showPassErrorMsg: boolean;
-
+  email: string;
+  password: string;
   constructor(private localforageService: LocalforageService , private router: Router) {
 
   }
