@@ -20,15 +20,8 @@
         </div>
       </div>
       <div  class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
-      <div>
-        <button class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i class="fa fa-th-large mt-0"></i></button>
-        <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-columns mt-0"></i></button>
-      </div>
-      <a  class="white-text mx-3" href="">Table name</a>
-      <div >
-          <button class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-pencil mt-0"></i></button>
-          <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-remove mt-0"></i></button>
-          <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-info-circle mt-0"></i></button>
+      <div class="table-title">
+        <a class="white-text mx-3" href="">Quotes</a>
       </div>
     </div>
 
@@ -36,48 +29,35 @@
       <table class="table table-hover mb-0">
         <thead>
           <tr>
-            <th>#</th>
-            <th> <a>First Name <i  class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Last Name<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Username<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Actions<i class="fa fa-sort ml-1"></i></a></th>
+            <th><a>Trip ID <i class="fa fa-sort ml-1"></i></a></th>
+            <th><a>Date <i class="fa fa-sort ml-1"></i></a></th>
+            <th class="th-lg"><a>Type<i class="fa fa-sort ml-1"></i></a></th>
+            <th class="th-lg"><a>Name<i class="fa fa-sort ml-1"></i></a></th>
+            <th class="th-lg"><a>Status<i class="fa fa-sort ml-1"></i></a></th>
+            <th class="th-lg"><a>Amount<i class="fa fa-sort ml-1"></i></a></th>
+            <th class="th-lg">View</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Abby</td>
-            <td>Barrett</td>
-            <td>@abbeme</td>
-            <td>
-              <a class="blue-text"><i class="fa fa-user"></i></a>
-              <a class="teal-text"><i class="fa fa-pencil"></i></a>
-              <a class="red-text"><i class="fa fa-times"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Danny</td>
-            <td>Collins</td>
-            <td>@dennis</td>
-            <td>
-              <a class="blue-text"><i class="fa fa-user"></i></a>
-              <a class="teal-text"><i class="fa fa-pencil"></i></a>
-              <a class="red-text"><i class="fa fa-times"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Clara</td>
-            <td>Ericson</td>
-            <td>@claris</td>
-            <td>
-             <a class="blue-text"><i class="fa fa-user"></i></a>
-             <a class="teal-text"><i class="fa fa-pencil"></i></a>
-             <a class="red-text"><i class="fa fa-times"></i></a>
-            </td>
+          <tr *ngFor= "let rowData of tableData">
+            <th scope="row">{{rowData.tripId}}</th>
+            <td>{{rowData.date}}</td>
+            <td><button type="button" class="btn sky-button" [ngClass]="rowData.type === 'Accepted' ? 'btn-success' : rowData.type === 'Completed' ? 'btn-primary' : rowData.type === 'Refunded' ? 'btn-warning' : 'btn-danger' ">{{rowData.type}}</button></td>
+            <td>{{rowData.name}}</td>
+            <td [ngClass]="rowData.status === 'Completed' ? 'completed' : 'pending'">{{rowData.status}}</td>
+            <td>{{rowData.amount}}</td>
+            <td><button type="button" class="btn btn-primary btn-rounded sky-button">Details</button></td>
           </tr>
         </tbody>
       </table>
   </div>
 </div>
+<!--
+{{rowData.type}}
+<td>
+  <a class="blue-text"><i class="fa fa-user"></i></a>
+  <a class="teal-text"><i class="fa fa-pencil"></i></a>
+  <a class="red-text"><i class="fa fa-times"></i></a>
+</td>
+<td>aside</td>
+<td>sas</td> -->
