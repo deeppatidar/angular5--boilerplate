@@ -4,7 +4,7 @@
 
 .login-form {
     .login {
-      padding:20px;
+      padding:40px;
       .md-form {
           position: relative;
           margin-bottom: 2.5rem;
@@ -15,6 +15,9 @@
       .forget-password {
         color: #45cafc;
         font-size: 11px;
+      }
+      .mrgin-btm  {
+        margin-bottom: 100px;
       }
     }
 }
