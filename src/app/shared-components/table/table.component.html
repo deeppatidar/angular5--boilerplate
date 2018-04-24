@@ -1,85 +1,84 @@
 <div class="container-fluid mt-5">
   <div class="card">
-    <div class="task-table">
-      <div  class="row task-table">
-        <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-date-picker name="startdate" [options]="myDatePickerOptions" [placeholder]="'Start date'" [(ngModel)]="model" required></mdb-date-picker>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-date-picker name="enddate" [options]="myDatePickerOptions" [placeholder]="'End date'" [(ngModel)]="model1" required></mdb-date-picker>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-select [options]="optionsSelect" placeholder="Choose your option"></mdb-select>
-        </div>
-        <div  class="col-xl-3 col-lg-6 col-md-12">
-          <form class="form-inline mt-2 ml-2 ng-untouched ng-pristine ng-valid" novalidate="">
-            <input  class="form-control my-0 py-0" placeholder="Search" type="text">
-            <button  class="btn btn-sm btn-primary ml-2 px-2 waves-effect waves-light"><i
-              class="fa fa-search"></i>
-            </button>
-          </form>
-        </div>
+    <div  class="row px-4">
+      <div class="col-xl-3 col-lg-6 col-md-12">
+        <mdb-date-picker name="startdate" [options]="myDatePickerOptions" [placeholder]="'Start date'" [(ngModel)]="model" required></mdb-date-picker>
       </div>
-      <div  class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
-      <div>
-        <button class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i class="fa fa-th-large mt-0"></i></button>
-        <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-columns mt-0"></i></button>
+      <div class="col-xl-3 col-lg-6 col-md-12">
+        <mdb-date-picker name="enddate" [options]="myDatePickerOptions" [placeholder]="'End date'" [(ngModel)]="model1" required></mdb-date-picker>
       </div>
-      <a  class="white-text mx-3" href="">Table name</a>
-      <div >
-          <button class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-pencil mt-0"></i></button>
-          <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-remove mt-0"></i></button>
-          <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-info-circle mt-0"></i></button>
+      <div class="col-xl-3 col-lg-6 col-md-12">
+        <mdb-select [options]="optionsSelect" placeholder="Choose your option"></mdb-select>
+      </div>
+      <div  class="col-xl-3 col-lg-6 col-md-12">
+        <form class="form-inline mt-2 ml-2 ng-untouched ng-pristine ng-valid" novalidate="">
+          <input  class="form-control my-0 py-0" placeholder="Search" type="text">
+          <button  class="btn btn-sm btn-primary ml-2 px-2 waves-effect waves-light"><i
+            class="fa fa-search"></i>
+          </button>
+        </form>
       </div>
     </div>
-
-    <div class="px-4 table-wrapper">
-      <table class="table table-hover mb-0">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th> <a>First Name <i  class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Last Name<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Username<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Actions<i class="fa fa-sort ml-1"></i></a></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Abby</td>
-            <td>Barrett</td>
-            <td>@abbeme</td>
-            <td>
-              <a class="blue-text"><i class="fa fa-user"></i></a>
-              <a class="teal-text"><i class="fa fa-pencil"></i></a>
-              <a class="red-text"><i class="fa fa-times"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Danny</td>
-            <td>Collins</td>
-            <td>@dennis</td>
-            <td>
-              <a class="blue-text"><i class="fa fa-user"></i></a>
-              <a class="teal-text"><i class="fa fa-pencil"></i></a>
-              <a class="red-text"><i class="fa fa-times"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Clara</td>
-            <td>Ericson</td>
-            <td>@claris</td>
-            <td>
-             <a class="blue-text"><i class="fa fa-user"></i></a>
-             <a class="teal-text"><i class="fa fa-pencil"></i></a>
-             <a class="red-text"><i class="fa fa-times"></i></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div  class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+    <div>
+      <button class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i class="fa fa-th-large mt-0"></i></button>
+      <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-columns mt-0"></i></button>
+    </div>
+    <a  class="white-text mx-3" href="">Table name</a>
+    <div >
+        <button class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-pencil mt-0"></i></button>
+        <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-remove mt-0"></i></button>
+        <button  class="btn btn-outline-white btn-rounded btn-sm px-2" type="button"><i  class="fa fa-info-circle mt-0"></i></button>
     </div>
   </div>
+
+  <div class="px-4 table-wrapper">
+    <table class="table table-hover mb-0">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th> <a>First Name <i  class="fa fa-sort ml-1"></i></a></th>
+          <th class="th-lg"><a>Last Name<i class="fa fa-sort ml-1"></i></a></th>
+          <th class="th-lg"><a>Username<i class="fa fa-sort ml-1"></i></a></th>
+          <th class="th-lg"><a>Actions<i class="fa fa-sort ml-1"></i></a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Abby</td>
+          <td>Barrett</td>
+          <td>@abbeme</td>
+          <td>
+            <a class="blue-text"><i class="fa fa-user"></i></a>
+            <a class="teal-text"><i class="fa fa-pencil"></i></a>
+            <a class="red-text"><i class="fa fa-times"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Danny</td>
+          <td>Collins</td>
+          <td>@dennis</td>
+          <td>
+            <a class="blue-text"><i class="fa fa-user"></i></a>
+            <a class="teal-text"><i class="fa fa-pencil"></i></a>
+            <a class="red-text"><i class="fa fa-times"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Clara</td>
+          <td>Ericson</td>
+          <td>@claris</td>
+          <td>
+           <a class="blue-text"><i class="fa fa-user"></i></a>
+           <a class="teal-text"><i class="fa fa-pencil"></i></a>
+           <a class="red-text"><i class="fa fa-times"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>

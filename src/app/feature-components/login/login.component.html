@@ -12,7 +12,8 @@
             </div>
 
             <div class="md-form">
-              <input type="password" [(ngModel)]="pass" name="pass" id="pass" class="form-control" mdbActive mdbInputValidate required data-error="Please provide a password" data-success=" " minLength="8">
+              <input type="password" [(ngModel)]="pass" name="pass" id="pass" class="form-control" mdbActive mdbInputValidate required data-error="Please provide a password of 8 char" data-success=" "
+              customRegex="^.{8,}$">
               <label for="pass">Your password</label>
             </div>
 
