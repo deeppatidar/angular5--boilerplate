@@ -4,7 +4,31 @@
     overflow-y: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+.table-title {
+  text-align: center;
+  width: 100%;
+}
 .sky-table {
   width: 100%;
   margin-bottom: 100px;
+}
+
+.sky-button {
+  height: 35px;
+  line-height: 12px;
+}
+
+.completed {
+  color: #00e25b;
+}
+.pending {
+  color: #ff941a;
+}
+
+.sky-border {
+   border: 1px solid #cfc1c1;
+   margin: 15px;
+}
+.table th td {
+   text-align: center;
 }
