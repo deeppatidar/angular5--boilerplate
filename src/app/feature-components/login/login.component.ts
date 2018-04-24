@@ -34,11 +34,7 @@ export class LoginComponent implements OnInit {
             this.showEmailErrorMsg = true;
         }
       } else {
-        console.log('hello')
         this.localforageService.setItem({key: 'isLoggedIn' , value: true}).then(()=> {
-        // this.appService.loginUser(value).subscribe(success => {
-        //   console.log(success)
-        // });
         this.router.navigate(['default']);
         });
       }
