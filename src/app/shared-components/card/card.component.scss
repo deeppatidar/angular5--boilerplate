@@ -1,10 +1,6 @@
-.card-size {
-  width: 200px;
-  height: 100px;
-}
 
-.cascading-admin-card[_ngcontent-c5] {
-  .admin-up[_ngcontent-c5] {
+.cascading-admin-card {
+  .admin-up {
       margin-left: 4%;
       margin-right: 4%;
       margin-top: -20px;
@@ -13,7 +9,7 @@
         margin-top: 2rem;
         text-align: right;
       }
-    .fa[_ngcontent-c5] {
+    .fa-icon {
         padding: 1.7rem;
         font-size: 2rem;
         color: #fff;
