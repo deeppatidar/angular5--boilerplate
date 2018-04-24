@@ -9,9 +9,12 @@ import { AppService } from '../../services/http/app.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  showEmailErrorMsg:boolean = false;
-  showPassErrorMsg:boolean = false;
-  constructor(private localforageService: LocalforageService, private appService: AppService, private router: Router) {
+
+  showEmailErrorMsg: boolean;
+  showPassErrorMsg: boolean;
+
+  constructor(private localforageService: LocalforageService , private router: Router) {
+
   }
 
   ngOnInit() {

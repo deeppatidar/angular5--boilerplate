@@ -6,6 +6,7 @@ import { DefaultComponent } from '../default/default.component';
 
 const routes: Routes = [
     //:TODO add route guard
+  {path: '', redirectTo: 'login' , pathMatch: 'full'},
   {path: 'login', component: LoginComponent },
   {path: 'default', component: DefaultComponent},
   {path: '**', redirectTo: 'login'},
