@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class TableComponent implements OnInit {
 
   optionsSelect: Array<any>;
-  tableData: Array<any>
+  tableData: Array<any>;
+  sortDirection = "asc";
   constructor() { }
 
   ngOnInit() {
@@ -25,4 +26,15 @@ export class TableComponent implements OnInit {
     ];
   }
 
+  sortData(key) {
+    this.tableData.sort((a: any, b: any): any => {
+        return (this.sortDirection == 'asc' ? (a[key] > b[key]) : (a[key] < b[key]));
+    });
+    if(this.sortDirection == "asc") {
+      this.sortDirection = "desc";
+    }
+    else {
+      this.sortDirection = "asc";
+    }
+  }
 }

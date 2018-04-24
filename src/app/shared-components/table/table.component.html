@@ -29,12 +29,12 @@
       <table class="table table-hover mb-0">
         <thead>
           <tr>
-            <th><a>Trip ID <i class="fa fa-sort ml-1"></i></a></th>
-            <th><a>Date <i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Type<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Name<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Status<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Amount<i class="fa fa-sort ml-1"></i></a></th>
+            <th><a>Trip ID <i class="fa fa-sort ml-1" (click)="sortData('tripId')"></i></a></th>
+            <th><a>Date <i class="fa fa-sort ml-1" (click)="sortData('date')"></i></a></th>
+            <th class="th-lg"><a>Type<i class="fa fa-sort ml-1" (click)="sortData('type')"></i></a></th>
+            <th class="th-lg"><a>Name<i class="fa fa-sort ml-1" (click)="sortData('name')"></i></a></th>
+            <th class="th-lg"><a>Status<i class="fa fa-sort ml-1" (click)="sortData('status')"></i></a></th>
+            <th class="th-lg"><a>Amount<i class="fa fa-sort ml-1" (click)="sortData('amount')"></i></a></th>
             <th class="th-lg">View</th>
           </tr>
         </thead>
@@ -52,12 +52,3 @@
       </table>
   </div>
 </div>
-<!--
-{{rowData.type}}
-<td>
-  <a class="blue-text"><i class="fa fa-user"></i></a>
-  <a class="teal-text"><i class="fa fa-pencil"></i></a>
-  <a class="red-text"><i class="fa fa-times"></i></a>
-</td>
-<td>aside</td>
-<td>sas</td> -->
