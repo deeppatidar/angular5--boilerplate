@@ -1,51 +1,23 @@
-
-@media screen and (max-width:450px) {
-    .loginForm {
-        margin: 10px;        
-    }
+.bg-image {
+  background-image: url('../../../assets/images/banner.jpg');
 }
-.loginForm {
-  margin: 0 auto;
-  width: 400px;
-.login-title {
-      text-align: center;
-    }
+
+.login-form {
     .login {
-      padding:20px;
-      width: 100%;
-      .form-control:focus{
-        box-shadow: none;
+      padding:40px;
+      .md-form {
+          position: relative;
+          margin-bottom: 2.5rem;
       }
-      .mat-input-container {
-        .mat-focused {
-          color: green;
-          background-color: red;
-        }
+      .login-btn {
+        width: 100%;
       }
-
+      .forget-password {
+        color: #45cafc;
+        font-size: 11px;
+      }
+      .mrgin-btm  {
+        margin-bottom: 100px;
+      }
     }
-    .card {
-        background: #fff;
-        padding: 20px ;
-        margin-top: 5%;
-        .login-image {
-            width: 65%;
-            height: 38px;
-        }
-        button {
-            background: #4267B2;
-        }
-        .login {
-            padding-top: 20px 0px;
-        }
-        .help-text {
-            color: red;
-            font-size: 10px;
-        }
-    }
-}
-
-.btn-google-plus {
-    background: #d34836!important;
-    color: #fff;
 }
