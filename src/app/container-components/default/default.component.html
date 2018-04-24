@@ -3,14 +3,8 @@
     <app-header></app-header>
   </div>
   <div class="row">
-    <div class="col-md-4">
-      <app-card></app-card>
-    </div>
-    <div class="col-md-4">
-      <app-card></app-card>
-    </div>
-    <div class="col-md-4">
-      <app-card></app-card>
+    <div class="col-md-4" *ngFor="let card of cardData">
+      <app-card [cardTitle]="card.title" [progressPercent]="card.percent" [cardValue]="card.value" [cardIcon]="card.icon"></app-card>
     </div>
   </div>
   <div class="row">
