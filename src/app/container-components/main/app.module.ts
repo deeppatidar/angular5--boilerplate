@@ -18,6 +18,7 @@ import { HeaderComponent } from '../../feature-components/header/header.componen
 import { FooterComponent } from '../../feature-components/footer/footer.component';
 import { CardComponent } from '../../shared-components/card/card.component';
 import { TableComponent } from '../../shared-components/table/table.component';
+import { ChartComponent } from '../../shared-components/chart/chart.component';
 
 // services
 import { AuthGuard } from '../../services/utils/auth.guard.service';
@@ -30,12 +31,13 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 
 //directives
 import { DropdownDirective } from '../../directives/dropdown.directive';
+// import { ChartsComponent } from '../../charts/charts.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent
   ],
   imports: [
     FormsModule,

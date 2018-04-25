@@ -4,6 +4,8 @@ import { LoginComponent } from '../../feature-components/login/login.component';
 import { AuthGuard } from '../../services/utils/auth.guard.service';
 import { DefaultComponent } from '../default/default.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { ChartComponent } from '../../shared-components/chart/chart.component';
+
 
 const routes: Routes = [
     //:TODO add route guard
@@ -11,7 +13,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'default', component: DefaultComponent , children:
     [
-      {path: '', component: DashboardComponent}
+      {path: '', component: DashboardComponent},
+      {path: 'chart' , component: ChartComponent}
     ]
   },
   {path: 'logout', redirectTo: 'login' },
