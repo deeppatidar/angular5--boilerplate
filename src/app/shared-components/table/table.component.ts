@@ -10,7 +10,11 @@ export class TableComponent implements OnInit {
   optionsSelect: Array<any>;
   tableData: Array<any>;
   sortDirection = "asc";
+  startDate: any;
+  endDate : any;
   search: string;
+  model: string;
+  model1: any;
   constructor() { }
 
   ngOnInit() {

@@ -2,10 +2,10 @@
   <div class="card">
       <div class="row px-4 sky-border">
         <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-date-picker name="startdate" [options]="myDatePickerOptions" [placeholder]="'Start date'" [(ngModel)]="model" required></mdb-date-picker>
+          <mdb-date-picker name="startdate" [options]="startDate" [placeholder]="'Start date'" [(ngModel)]="model1" required></mdb-date-picker>
         </div>
         <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-date-picker name="enddate" [options]="myDatePickerOptions" [placeholder]="'End date'" [(ngModel)]="model1" required></mdb-date-picker>
+          <mdb-date-picker name="enddate" [options]="endDate" [placeholder]="'End date'" [(ngModel)]="model" required></mdb-date-picker>
         </div>
         <div class="col-xl-3 col-lg-6 col-md-12">
           <mdb-select [options]="optionsSelect" placeholder="Choose your option"></mdb-select>
