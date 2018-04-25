@@ -25,6 +25,9 @@ import { AuthGuard } from '../../services/utils/auth.guard.service';
 import { LocalforageService } from '../../services/utils/localforage.service';
 import { LocalforageConfigService } from '../../services/config/localforageconfig.service';
 import { AppService } from '../../services/http/app.service';
+import { LoggingService } from '../../services/utils/logging.service';
+import { GlobalErrorHandler } from '../../services/utils/error-handler';
+import { HttpInterceptor } from "../../services/http/httpinterceptor";
 
 //pipes
 import { FilterPipe } from '../../pipes/filter.pipe';
@@ -49,7 +52,7 @@ import { DropdownDirective } from '../../directives/dropdown.directive';
   providers: [
     AuthGuard,
     { provide: LocalforageService , useClass: LocalforageService },
-     LocalforageConfigService, AppService],
+     LocalforageConfigService, LoggingService, AppService, GlobalErrorHandler, HttpInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4" *ngFor="let card of cardData">
+    <div class="x-small col-md-4 col-sm-4 col-xs-2 col-lg-4" *ngFor="let card of cardData">
       <app-card [cardTitle]="card.title" [progressPercent]="card.percent" [cardValue]="card.value" [cardIcon]="card.icon"></app-card>
     </div>
   </div>
