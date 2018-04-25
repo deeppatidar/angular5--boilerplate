@@ -2,19 +2,19 @@
   <div class="card">
       <div class="row px-4 sky-border">
         <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-date-picker name="startdate" [options]="myDatePickerOptions" [placeholder]="'Start date'" [(ngModel)]="model" required></mdb-date-picker>
+          <mdb-date-picker [options]="myDatePickerOptions" [placeholder]="'Start date'" [(ngModel)]="startDate" name="startDate" required></mdb-date-picker>
         </div>
         <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-date-picker name="enddate" [options]="myDatePickerOptions" [placeholder]="'End date'" [(ngModel)]="model1" required></mdb-date-picker>
+          <mdb-date-picker [options]="myDatePickerOptions" [placeholder]="'End date'" [(ngModel)]="endDate" name="endDate" required></mdb-date-picker>
         </div>
         <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-select [options]="optionsSelect" placeholder="Choose your option"></mdb-select>
+          <mdb-select [options]="optionsSelect"  [(ngModel)]="showOnly" name="showOnly" placeholder="Show only"></mdb-select>
         </div>
         <div  class="col-xl-3 col-lg-6 col-md-12">
           <form class="form-inline mt-2 ml-2 ng-untouched ng-pristine ng-valid" novalidate="">
-            <input  class="form-control my-0 py-0" placeholder="Search" type="text">
-            <button  class="btn btn-sm btn-primary ml-2 px-2 waves-effect waves-light"><i
-              class="fa fa-search"></i>
+            <input  class="form-control my-0 py-0" placeholder="Keyword" type="text"  [(ngModel)]="keyword"  name="keyword">
+            <button  class="btn btn-sm btn-primary ml-2 px-2 waves-effect waves-light" (click)="searchFilter(startDate, endDate, showOnly, keyword)">
+              <i class="fa fa-search"></i>
             </button>
           </form>
         </div>
@@ -24,22 +24,30 @@
         <a class="white-text mx-3" href="">Quotes</a>
       </div>
     </div>
-
     <div class="px-4 table-wrapper">
       <table class="table table-hover mb-0">
         <thead>
           <tr>
-            <th><a>Trip ID <i class="fa fa-sort ml-1"></i></a></th>
-            <th><a>Date <i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Type<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Name<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Status<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Amount<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg">View</th>
+            <th><a>Trip ID</a></th>
+            <th (click)="sort('date', sortDirection)">
+              <a>Date
+                <i class="fa fa-chevron-up" *ngIf="sortDirection === 'asc'"></i>
+                <i class="fa fa-chevron-down" *ngIf="sortDirection === 'desc'"></i>
+              </a>
+            </th>
+            <th><a>Type</a></th>
+            <th (click)="sort('name', sortDirection)">
+              <a>Name
+                <i class="fa fa-chevron-up" *ngIf="sortDirection === 'asc'"></i>
+                <i class="fa fa-chevron-down" *ngIf="sortDirection === 'desc'"></i>
+              </a></th>
+            <th><a>Status</a></th>
+            <th><a>Amount</a></th>
+            <th>View</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor= "let rowData of tableData">
+          <tr *ngFor= "let rowData of tableData | filter : keyword">
             <th scope="row">{{rowData.tripId}}</th>
             <td>{{rowData.date}}</td>
             <td><button type="button" class="btn sky-button" [ngClass]="rowData.type === 'Accepted' ? 'btn-success' : rowData.type === 'Completed' ? 'btn-primary' : rowData.type === 'Refunded' ? 'btn-warning' : 'btn-danger' ">{{rowData.type}}</button></td>
