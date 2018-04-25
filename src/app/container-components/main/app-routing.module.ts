@@ -9,7 +9,7 @@ const routes: Routes = [
     //:TODO add route guard
   {path: '', redirectTo: 'login' , pathMatch: 'full'},
   {path: 'login', component: LoginComponent },
-  {path: 'default', component: DefaultComponent , children:
+  {path: 'home', component: DefaultComponent , children:
     [
       {path: '', component: DashboardComponent}
     ]
