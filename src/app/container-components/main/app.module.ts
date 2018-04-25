@@ -6,6 +6,7 @@ import { MDBBootstrapModules } from 'ng-pro';
 import { NgForageModule} from 'ngforage';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common/http';
 
 // custom modules
 
@@ -27,7 +28,8 @@ import { LocalforageConfigService } from '../../services/config/localforageconfi
 import { AppService } from '../../services/http/app.service';
 import { LoggingService } from '../../services/utils/logging.service';
 import { GlobalErrorHandler } from '../../services/utils/error-handler';
-import { HttpInterceptor } from "../../services/http/httpinterceptor";
+// import { HttpInterceptor } from "../../services/http/httpinterceptor";
+import { AuthenticationInterceptor } from "../../services/http/httpinterceptor";
 
 //pipes
 import { FilterPipe } from '../../pipes/filter.pipe';
@@ -45,6 +47,8 @@ import { DropdownDirective } from '../../directives/dropdown.directive';
   imports: [
     FormsModule,
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     MDBBootstrapModules.forRoot(),
     AppRoutingModule,
     NgForageModule.forRoot()
@@ -52,7 +56,11 @@ import { DropdownDirective } from '../../directives/dropdown.directive';
   providers: [
     AuthGuard,
     { provide: LocalforageService , useClass: LocalforageService },
-     LocalforageConfigService, LoggingService, AppService, GlobalErrorHandler, HttpInterceptor],
+     LocalforageConfigService, LoggingService, AppService, GlobalErrorHandler, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true,
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

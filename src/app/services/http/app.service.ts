@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { HttpInterceptor } from "./httpinterceptor"
+//import { AuthenticationInterceptor } from "./httpinterceptor"
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable()
 export class AppService {
 
-  constructor(private http : HttpInterceptor) { }
+  constructor(private http : HttpClient) { }
 
   public getTableData(): Observable<any> {
-        const url = '../../../assets/tabledata.json';
-        return this.http.get(url).map((resp: Response) => <any>(resp.json()));
+        const url = '../../../assetss/tabledata.json';
+        return this.http.get(url);
     };
 
 }
