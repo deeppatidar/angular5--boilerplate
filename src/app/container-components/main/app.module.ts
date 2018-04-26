@@ -10,30 +10,44 @@ import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common
 
 // custom modules
 
-// custom components
+// core components
 import { AppComponent } from './app.component';
-import { LoginComponent } from '../../feature-components/login/login.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { DefaultComponent } from '../default/default.component';
-import { HeaderComponent } from '../../feature-components/header/header.component';
-import { FooterComponent } from '../../feature-components/footer/footer.component';
-import { CardComponent } from '../../shared-components/card/card.component';
-import { TableComponent } from '../../shared-components/table/table.component';
-import { ChartComponent } from '../../shared-components/chart/chart.component';
-import { TransactionTableComponent } from '../../shared-components/transaction-table/transaction-table.component';
+
+import { TransactionComponent } from '../transaction/transaction.component';
 import { OperatorTransactionComponent } from '../operator-transaction/operator-transaction.component';
 import { BrokerTransactionComponent } from '../broker-transaction/broker-transaction.component';
 import { OneskyTransactionComponent } from '../onesky-transaction/onesky-transaction.component';
 
-// services
+
+//shared components
+
+import { CardComponent } from '../../shared-components/card/card.component';
+import { TableComponent } from '../../shared-components/table/table.component';
+import { ChartComponent } from '../../shared-components/chart/chart.component';
+import { TransactionTableComponent } from '../../shared-components/transaction-table/transaction-table.component';
+
+//feature components
+import { HeaderComponent } from '../../feature-components/header/header.component';
+import { FooterComponent } from '../../feature-components/footer/footer.component';
+import { LoginComponent } from '../../feature-components/login/login.component';
+
+
+// http services
+
+import { AppService } from '../../services/http/app.service';
+import { AuthenticationInterceptor } from "../../services/http/httpinterceptor";
+
+//utils services
 import { AuthGuard } from '../../services/utils/auth.guard.service';
 import { LocalforageService } from '../../services/utils/localforage.service';
-import { LocalforageConfigService } from '../../services/config/localforageconfig.service';
-import { AppService } from '../../services/http/app.service';
 import { LoggingService } from '../../services/utils/logging.service';
 import { GlobalErrorHandler } from '../../services/utils/error-handler';
-// import { HttpInterceptor } from "../../services/http/httpinterceptor";
-import { AuthenticationInterceptor } from "../../services/http/httpinterceptor";
+
+//config services
+
+import { LocalforageConfigService } from '../../services/config/localforageconfig.service';
 
 //pipes
 import { FilterPipe } from '../../pipes/filter.pipe';
@@ -41,13 +55,12 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 //directives
 import { DropdownDirective } from '../../directives/dropdown.directive';
 
-// import { ChartsComponent } from '../../charts/charts.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent, TransactionTableComponent, OperatorTransactionComponent, BrokerTransactionComponent, OneskyTransactionComponent
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent, TransactionTableComponent, OperatorTransactionComponent, BrokerTransactionComponent, OneskyTransactionComponent, TransactionComponent
   ],
   imports: [
     FormsModule,
@@ -64,7 +77,7 @@ import { DropdownDirective } from '../../directives/dropdown.directive';
      LocalforageConfigService, LoggingService, AppService, GlobalErrorHandler, {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
-      multi: true,
+      multi: true
 }],
   bootstrap: [AppComponent]
 })
