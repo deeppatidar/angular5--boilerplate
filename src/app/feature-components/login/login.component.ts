@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         }
       } else {
         this.localforageService.setItem({key: 'isLoggedIn' , value: true}).then(()=> {
-        this.router.navigate(['home']);
+        this.router.navigate(['app']);
         });
       }
   }

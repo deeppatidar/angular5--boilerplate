@@ -25,18 +25,19 @@ const routes: Routes = [
     //:TODO add route guard
   {path: '', redirectTo: 'login' , pathMatch: 'full'},
   {path: 'login', component: LoginComponent },
-  {path: 'home', component: DefaultComponent , children:
+  {path: 'app', component: DefaultComponent , children:
     [
       {path: '', component: DashboardComponent},
-      {path: 'chart' , component: ChartComponent}
-    ]
-  },
-  {path: 'transaction', component: TransactionComponent , children:
-    [
-      {path: 'operator', component: OperatorTransactionComponent},
-      {path: 'broker', component: BrokerTransactionComponent},
-      {path: 'onesky', component: OneskyTransactionComponent},
-      {path: '', redirectTo: 'operator', pathMatch: 'full'},
+      {path: 'chart' , component: ChartComponent},
+      {path: 'transaction', component: TransactionComponent , children:
+        [
+          {path: 'operator', component: OperatorTransactionComponent},
+          {path: 'broker', component: BrokerTransactionComponent},
+          {path: 'onesky', component: OneskyTransactionComponent},
+          {path: '', redirectTo: 'operator', pathMatch: 'full'},
+          {path: '**', redirectTo: 'operator'},
+        ]
+      }
     ]
   },
   {path: 'logout', redirectTo: 'login' },
