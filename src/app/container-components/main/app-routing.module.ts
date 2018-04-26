@@ -6,6 +6,9 @@ import { DefaultComponent } from '../default/default.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { ChartComponent } from '../../shared-components/chart/chart.component';
 
+import { OperatorTransactionComponent } from '../operator-transaction/operator-transaction.component';
+import { BrokerTransactionComponent } from '../broker-transaction/broker-transaction.component';
+import { OneskyTransactionComponent } from '../onesky-transaction/onesky-transaction.component';
 
 const routes: Routes = [
     //:TODO add route guard
@@ -19,9 +22,9 @@ const routes: Routes = [
   },
   {path: 'transaction', component: DefaultComponent , children:
     [
-      {path: 'operator' , component: ChartComponent},
-      {path: 'broker' , component: ChartComponent},
-      {path: 'onesky' , component: ChartComponent},
+      {path: 'operator', component: OperatorTransactionComponent},
+      {path: 'broker', component: BrokerTransactionComponent},
+      {path: 'onesky', component: OneskyTransactionComponent},
       {path: '', redirectTo: 'operator', pathMatch: 'full'},
     ]
   },
