@@ -20,6 +20,7 @@ import { FooterComponent } from '../../feature-components/footer/footer.componen
 import { CardComponent } from '../../shared-components/card/card.component';
 import { TableComponent } from '../../shared-components/table/table.component';
 import { ChartComponent } from '../../shared-components/chart/chart.component';
+import { TransactionTableComponent } from '../../shared-components/transaction-table/transaction-table.component';
 
 // services
 import { AuthGuard } from '../../services/utils/auth.guard.service';
@@ -36,13 +37,16 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 
 //directives
 import { DropdownDirective } from '../../directives/dropdown.directive';
+import { OperatorTransactionComponent } from '../operator-transaction/operator-transaction.component';
+import { BrokerTransactionComponent } from '../broker-transaction/broker-transaction.component';
+import { OneskyTransactionComponent } from '../onesky-transaction/onesky-transaction.component';
 // import { ChartsComponent } from '../../charts/charts.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent, TransactionTableComponent, OperatorTransactionComponent, BrokerTransactionComponent, OneskyTransactionComponent
   ],
   imports: [
     FormsModule,

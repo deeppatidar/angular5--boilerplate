@@ -11,7 +11,7 @@ export class AppService {
   constructor(private http : HttpClient) { }
 
   public getTableData(): Observable<any> {
-        const url = '../../../assetss/tabledata.json';
+        const url = '../../../assets/tabledata.json';
         return this.http.get(url);
     };
 

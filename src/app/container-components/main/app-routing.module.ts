@@ -17,6 +17,14 @@ const routes: Routes = [
       {path: 'chart' , component: ChartComponent}
     ]
   },
+  {path: 'transaction', component: DefaultComponent , children:
+    [
+      {path: 'operator' , component: ChartComponent},
+      {path: 'broker' , component: ChartComponent},
+      {path: 'onesky' , component: ChartComponent},
+      {path: '', redirectTo: 'operator', pathMatch: 'full'},
+    ]
+  },
   {path: 'logout', redirectTo: 'login' },
   {path: '**', redirectTo: 'login'},
 ];
