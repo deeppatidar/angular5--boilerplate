@@ -1,12 +1,55 @@
+<div class="">
+  <div class="row px-4">
+      <div class="col-xl-9 col-lg-9 col-md-8">
+        <div class="search-wraper">
+          <button class="btn btn-sm btn-primary ml-2 px-2 waves-effect waves-light float-l"><i
+            class="fa fa-search"></i>
+          </button>
+          <input [(ngModel)]="search" name="search" class="form-control my-0 py-0 float-l search-box" placeholder="search" type="text">
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-4">
+        <div class="date-picker-wraper">
+        <button class="btn btn-sm btn-primary ml-2 px-2 waves-effect waves-light float-r"><i class="fa fa-calendar"></i></button>
+        <mdb-date-picker class="" name="enddate" [options]="endDate" [placeholder]="''" [(ngModel)]="model" required class="float-l reduce-height"></mdb-date-picker>
+      </div>
+      </div>
+  </div>
+</div>
+<br>
 
 <!-- Nav tabs -->
-<mdb-tabset [buttonClass]="'classic-tabs tabs-cyan'" [contentClass]="'card'" class="classic-tabs">
+<mdb-tabset [buttonClass]="'classic-tabs tabs-cyan'" [contentClass]="''" class="classic-tabs">
   <!--Panel 1-->
   <mdb-tab heading="Profile">
     <div class="row">
       <div class="col-12">
-         <br>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+         <div class="px-4 table-wrapper">
+           <table class="table table-hover mb-0">
+             <thead>
+               <tr>
+                 <th><a (click)="sortData('tripId')">Trip ID <i class="fa fa-sort ml-1"></i></a></th>
+                 <th><a (click)="sortData('date')">Date <i class="fa fa-sort ml-1"></i></a></th>
+                 <th class="th-lg"><a (click)="sortData('type')">Type<i class="fa fa-sort ml-1" ></i></a></th>
+                 <th class="th-lg"><a (click)="sortData('name')">Name<i class="fa fa-sort ml-1"></i></a></th>
+                 <th class="th-lg"><a (click)="sortData('status')">Status<i class="fa fa-sort ml-1"></i></a></th>
+                 <th class="th-lg"><a  (click)="sortData('amount')">Amount<i class="fa fa-sort ml-1"></i></a></th>
+                 <th class="th-lg">View</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr *ngFor= "let rowData of tableData | filter: search">
+                 <th scope="row">{{rowData.tripId}}</th>
+                 <td>{{rowData.date}}</td>
+                 <td><button type="button" class="btn sky-button" [ngClass]="rowData.type === 'Accepted' ? 'btn-success' : rowData.type === 'Completed' ? 'btn-primary' : rowData.type === 'Refunded' ? 'btn-warning' : 'btn-danger' ">{{rowData.type}}</button></td>
+                 <td>{{rowData.name}}</td>
+                 <td [ngClass]="rowData.status === 'Completed' ? 'completed' : 'pending'">{{rowData.status}}</td>
+                 <td>{{rowData.amount}}</td>
+                 <td><button type="button" class="btn btn-primary btn-rounded sky-button">Details</button></td>
+               </tr>
+             </tbody>
+           </table>
+       </div>
       </div>
     </div>
     </mdb-tab>
@@ -14,9 +57,32 @@
     <mdb-tab heading="Follow">
       <div class="row">
         <div class="col-12">
-           <br>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+           <div class="px-4 table-wrapper">
+             <table class="table table-hover mb-0">
+               <thead>
+                 <tr>
+                   <th><a (click)="sortData('tripId')">Trip ID <i class="fa fa-sort ml-1"></i></a></th>
+                   <th><a (click)="sortData('date')">Date <i class="fa fa-sort ml-1"></i></a></th>
+                   <th class="th-lg"><a (click)="sortData('type')">Type<i class="fa fa-sort ml-1" ></i></a></th>
+                   <th class="th-lg"><a (click)="sortData('name')">Name<i class="fa fa-sort ml-1"></i></a></th>
+                   <th class="th-lg"><a (click)="sortData('status')">Status<i class="fa fa-sort ml-1"></i></a></th>
+                   <th class="th-lg"><a  (click)="sortData('amount')">Amount<i class="fa fa-sort ml-1"></i></a></th>
+                   <th class="th-lg">View</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr *ngFor= "let rowData of tableData | filter: search">
+                   <th scope="row">{{rowData.tripId}}</th>
+                   <td>{{rowData.date}}</td>
+                   <td><button type="button" class="btn sky-button" [ngClass]="rowData.type === 'Accepted' ? 'btn-success' : rowData.type === 'Completed' ? 'btn-primary' : rowData.type === 'Refunded' ? 'btn-warning' : 'btn-danger' ">{{rowData.type}}</button></td>
+                   <td>{{rowData.name}}</td>
+                   <td [ngClass]="rowData.status === 'Completed' ? 'completed' : 'pending'">{{rowData.status}}</td>
+                   <td>{{rowData.amount}}</td>
+                   <td><button type="button" class="btn btn-primary btn-rounded sky-button">Details</button></td>
+                 </tr>
+               </tbody>
+             </table>
+         </div>
         </div>
       </div>
     </mdb-tab>
@@ -24,16 +90,64 @@
     <mdb-tab heading="Contact">
       <div class="row">
         <div class="col-12">
-           <br>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+           <div class="px-4 table-wrapper">
+             <table class="table table-hover mb-0">
+               <thead>
+                 <tr>
+                   <th><a (click)="sortData('tripId')">Trip ID <i class="fa fa-sort ml-1"></i></a></th>
+                   <th><a (click)="sortData('date')">Date <i class="fa fa-sort ml-1"></i></a></th>
+                   <th class="th-lg"><a (click)="sortData('type')">Type<i class="fa fa-sort ml-1" ></i></a></th>
+                   <th class="th-lg"><a (click)="sortData('name')">Name<i class="fa fa-sort ml-1"></i></a></th>
+                   <th class="th-lg"><a (click)="sortData('status')">Status<i class="fa fa-sort ml-1"></i></a></th>
+                   <th class="th-lg"><a  (click)="sortData('amount')">Amount<i class="fa fa-sort ml-1"></i></a></th>
+                   <th class="th-lg">View</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr *ngFor= "let rowData of tableData | filter: search">
+                   <th scope="row">{{rowData.tripId}}</th>
+                   <td>{{rowData.date}}</td>
+                   <td><button type="button" class="btn sky-button" [ngClass]="rowData.type === 'Accepted' ? 'btn-success' : rowData.type === 'Completed' ? 'btn-primary' : rowData.type === 'Refunded' ? 'btn-warning' : 'btn-danger' ">{{rowData.type}}</button></td>
+                   <td>{{rowData.name}}</td>
+                   <td [ngClass]="rowData.status === 'Completed' ? 'completed' : 'pending'">{{rowData.status}}</td>
+                   <td>{{rowData.amount}}</td>
+                   <td><button type="button" class="btn btn-primary btn-rounded sky-button">Details</button></td>
+                 </tr>
+               </tbody>
+             </table>
+         </div>
         </div>
       </div>
     </mdb-tab>
     <mdb-tab heading="Be awesome">
       <div class="row">
         <div class="col-12">
-           <br>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+          <div class="px-4 table-wrapper">
+            <table class="table table-hover mb-0">
+              <thead>
+                <tr>
+                  <th><a (click)="sortData('tripId')">Trip ID <i class="fa fa-sort ml-1"></i></a></th>
+                  <th><a (click)="sortData('date')">Date <i class="fa fa-sort ml-1"></i></a></th>
+                  <th class="th-lg"><a (click)="sortData('type')">Type<i class="fa fa-sort ml-1" ></i></a></th>
+                  <th class="th-lg"><a (click)="sortData('name')">Name<i class="fa fa-sort ml-1"></i></a></th>
+                  <th class="th-lg"><a (click)="sortData('status')">Status<i class="fa fa-sort ml-1"></i></a></th>
+                  <th class="th-lg"><a  (click)="sortData('amount')">Amount<i class="fa fa-sort ml-1"></i></a></th>
+                  <th class="th-lg">View</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor= "let rowData of tableData | filter: search">
+                  <th scope="row">{{rowData.tripId}}</th>
+                  <td>{{rowData.date}}</td>
+                  <td><button type="button" class="btn sky-button" [ngClass]="rowData.type === 'Accepted' ? 'btn-success' : rowData.type === 'Completed' ? 'btn-primary' : rowData.type === 'Refunded' ? 'btn-warning' : 'btn-danger' ">{{rowData.type}}</button></td>
+                  <td>{{rowData.name}}</td>
+                  <td [ngClass]="rowData.status === 'Completed' ? 'completed' : 'pending'">{{rowData.status}}</td>
+                  <td>{{rowData.amount}}</td>
+                  <td><button type="button" class="btn btn-primary btn-rounded sky-button">Details</button></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
         </div>
       </div>
   </mdb-tab>
