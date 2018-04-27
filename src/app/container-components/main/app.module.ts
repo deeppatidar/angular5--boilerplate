@@ -26,7 +26,7 @@ import { OneskyTransactionComponent } from '../onesky-transaction/onesky-transac
 import { CardComponent } from '../../shared-components/card/card.component';
 import { TableComponent } from '../../shared-components/table/table.component';
 import { ChartComponent } from '../../shared-components/chart/chart.component';
-import { TransactionTableComponent } from '../../shared-components/transaction-table/transaction-table.component';
+
 
 //feature components
 import { HeaderComponent } from '../../feature-components/header/header.component';
@@ -60,7 +60,7 @@ import { DropdownDirective } from '../../directives/dropdown.directive';
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent, TransactionTableComponent, OperatorTransactionComponent, BrokerTransactionComponent, OneskyTransactionComponent, TransactionComponent
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent, OperatorTransactionComponent, BrokerTransactionComponent, OneskyTransactionComponent, TransactionComponent
   ],
   imports: [
     FormsModule,

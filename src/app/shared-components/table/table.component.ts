@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from '../../services/http/app.service';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 
@@ -7,42 +7,10 @@ import { HttpErrorResponse } from '@angular/common/http/src/response';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
-
-  optionsSelect: Array<any>;
-  tableData: Array<any>;
+export class TableComponent {
+  @Input() tableData : Array<any>;
+  @Input() search : any;
   sortDirection = "asc";
-  startDate: any;
-  endDate : any;
-  search: string;
-  model: string;
-  model1: any;
-
-  constructor(private appService : AppService) {
-
-  };
-
-
-  ngOnInit() {
-    this.optionsSelect = [
-            { value: '1', label: 'Option 1' },
-            { value: '2', label: 'Option 2' },
-            { value: '3', label: 'Option 3' },
-        ];
-
-    this.appService.getTableData().subscribe(
-      data => {
-        this.tableData = data;
-      },
-      (err: HttpErrorResponse) => {
-        console.log (err);
-      }
-    );
-  }
-
-  searchData(startDate: string, endDate: string, showOnly: string, searchKeyword: any) {
-
-  };
 
   sortData(key) {
     this.tableData.sort((a: any, b: any): any => {

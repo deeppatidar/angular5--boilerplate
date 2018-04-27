@@ -5,9 +5,60 @@
       <app-card [cardTitle]="card.title" [progressPercent]="card.percent" [cardValue]="card.value" [cardIcon]="card.icon"></app-card>
     </div>
   </div>
+
   <div class="row mt-3">
     <div class="col-md-12">
-      <app-transaction-table></app-transaction-table>
+        <div class="row px-4">
+          <form class="form-inline form-width-100">
+              <div class="md-form form-group control-width">
+                <i class="fa fa-search prefix"></i>
+                  <input type="email" id="form91" class="form-control validate" mdbActive>
+                  <label for="form91" data-error="wrong" data-success="right">Type your email</label>
+              </div>
+
+              <div class="md-form form-group control-width">
+                  <i class="fa fa-calendar prefix"></i>
+                  <input type="password" id="form92" class="form-control validate" >
+                  <label for="form92" data-error="wrong" data-success="right">Type your password</label>
+              </div>
+          </form>
+        </div>
+
+      <br>
+      <mdb-tabset #staticTabs [buttonClass]="'nav-tabs tabs-4 pills-secondary white margin'" [contentClass]="''">
+         <mdb-tab heading="Profile">
+             <div class="row">
+                 <div class="col-12">
+                       <div class="px-4 table-wrapper">
+                          <app-table [tableData]="tableData"></app-table>
+                        </div>
+                    </div>
+                 </div>
+         </mdb-tab>
+         <mdb-tab heading="Follow">
+             <div class="row">
+                 <div class="col-12">
+
+                       <div class="px-4 table-wrapper">
+                          <app-table [tableData]="tableData"></app-table>
+                        </div>
+
+                 </div>
+             </div>
+         </mdb-tab>
+         <mdb-tab heading="Mail">
+             <div class="row">
+                 <div class="col-12">
+                  
+                       <div class="px-4 table-wrapper">
+                          <app-table [tableData]="tableData"></app-table>
+                        </div>
+
+                 </div>
+             </div>
+         </mdb-tab>
+       </mdb-tabset>
+
     </div>
   </div>
 </div>
