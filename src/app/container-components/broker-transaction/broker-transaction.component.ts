@@ -17,6 +17,7 @@ export class BrokerTransactionComponent implements OnInit {
   model: string;
   model1: any;
   tripDetail= { "confirm": 1 , "completed": 4 , "cancelled": 10  };
+  
   cardData: any = [
     { title: "Sales" , percent: 25 , value: "$2000" , icon: "fa fa-money" },
     { title: "Business" , percent: 50 , value: "$200" , icon: "fa fa-calendar" },

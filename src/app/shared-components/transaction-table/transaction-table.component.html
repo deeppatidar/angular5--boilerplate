@@ -6,50 +6,50 @@
       </div>
       <div class="col">
         <div class="heading">
-          Payment Status
+          <a (click)="sortData('paymentStatus')">Payment Status<i class="fa fa-sort ml-1" ></i></a>
         </div>
       </div>
       <div class="col">
         <div class="heading">
-          Trip Date
+        <a (click)="sortData('tripDate')">Trip Date<i class="fa fa-sort ml-1" ></i></a>
         </div>
       </div>
       <div class="col">
         <div class="heading">
-          Operator
+          <a (click)="sortData('operator')">Operator<i class="fa fa-sort ml-1" ></i></a>
         </div>
       </div>
       <div class="col">
         <div class="heading">
-          Trip #
+        <a (click)="sortData('tripId')">Trip#<i class="fa fa-sort ml-1" ></i></a>
         </div>
       </div>
       <div class="col">
         <div class="heading">
-          Payment #
+          <a (click)="sortData('payment')">Payment#<i class="fa fa-sort ml-1" ></i></a>
         </div>
       </div>
       <div class="col">
         <div class="heading">
-          Est Hrs.
+          <a (click)="sortData('estimatedHrs')">Est. Hrs<i class="fa fa-sort ml-1" ></i></a>
         </div>
       </div>
       <div class="col">
         <div class="heading">
-        Active Hrs.
+      <a (click)="sortData('actualHrs')">Act. Hrs<i class="fa fa-sort ml-1" ></i></a>
         </div>
       </div>
       <div class="col">
         <div class="heading">
-          All Transactions
+          <a (click)="sortData('paymentAmount')">All Transaction<i class="fa fa-sort ml-1" ></i></a>
         </div>
       </div>
   </div>
   <div *ngFor="let rowData of tableData" (click)="toggle(rowData)">
     <div class="row table-data waves-light">
       <div class="col">
-        <i *ngIf="rowData.toggle" class="fa fa-angle-up"></i>
-        <i *ngIf="!rowData.toggle" class="fa fa-angle-down"></i>
+        <i *ngIf="rowData.toggle" class="fa fa-minus"></i>
+        <i *ngIf="!rowData.toggle" class="fa fa-plus"></i>
       </div>
       <div class="col">
         {{rowData.paymentStatus}}

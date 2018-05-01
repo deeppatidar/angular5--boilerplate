@@ -21,6 +21,7 @@ export class TransactionTableComponent implements OnInit {
       row.toggle = !row.toggle;
     }
   }
+
   sortData(key) {
     this.tableData.sort((a: any, b: any): any => {
         return (this.sortDirection == 'asc' ? (a[key] > b[key]) : (a[key] < b[key]));
