@@ -80,6 +80,9 @@ import { TransactionTableComponent } from '../../shared-components/transaction-t
       useClass: AuthenticationInterceptor,
       multi: true
 }],
+schemas: [
+    NO_ERRORS_SCHEMA
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

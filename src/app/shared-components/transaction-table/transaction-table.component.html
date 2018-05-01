@@ -1,6 +1,6 @@
-<div class="container-fluid card">
+<!-- <div class="container-fluid card">
   <div class="row table-heading">
-      <div class="col">
+      <div class="col icon">
         <div class="heading">
         </div>
       </div>
@@ -47,7 +47,7 @@
   </div>
   <div *ngFor="let rowData of tableData" (click)="toggle(rowData)">
     <div class="row table-data waves-light">
-      <div class="col">
+      <div class="col icon">
         <i *ngIf="rowData.toggle" class="fa fa-minus"></i>
         <i *ngIf="!rowData.toggle" class="fa fa-plus"></i>
       </div>
@@ -109,7 +109,8 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<!-- Collapse-->
 <!-- <table class="table table-hover mb-0">
     <tr>
       <td>
@@ -127,32 +128,68 @@
         </table>
       </td>
     </tr>
-    <tr *ngFor="let rowData of tableData" (click)="toggle(rowData)">
+    <tr *ngFor="let rowData of tableData">
       <td>
         <table class="table table-hover mb-0">
           <tr>
-            <td style="width:12%;">{{rowData.paymentStatus}}</td>
-            <td style="width:12%;">{{rowData.tripDate}}</td>
-            <td style="width:12%;">{{rowData.operator}}</td>
-            <td style="width:12%;">{{rowData.tripId}}</td>
-            <td style="width:12%;">{{rowData.payment}}</td>
-            <td style="width:12%;">{{rowData.estimatedHrs}}</td>
-            <td style="width:12%;">{{rowData.activeHrs}}</td>
-            <td style="width:12%;">{{rowData.paymentAmount}}</td>
+            <td style="width:20px;"><button class="btn btn-primary btn-height" type="button" (click)="test.toggle()">{{rowData.paymentStatus}}</button></td>
+            <td>{{rowData.tripDate}}</td>
+            <td>{{rowData.operator}}</td>
+            <td>{{rowData.tripId}}</td>
+            <td>{{rowData.payment}}</td>
+            <td>{{rowData.estimatedHrs}}</td>
+            <td>{{rowData.activeHrs}}</td>
+            <td>{{rowData.paymentAmount}}</td>
           </tr>
-        <tr *ngIf="rowData.toggle">
-          <table class="table table-hover mb-0">
-            <tr *ngFor="let detail of rowData.detail">
-              <td>{{detail.start}}</td>
-              <td>{{detail.tail}}</td>
-              <td>{{detail.origin}}</td>
-              <td>{{detail.destnation}}</td>
-              <td>{{detail.estimatedHrs}}</td>
-              <td>{{detail.activeHrs}}</td>
-            <tr>
-          </table>
-        </tr>
+          <tr>
+            <td colspan="12">
+              <div class="" [mdbCollapse]="isCollapsed" #test="bs-collapse" style="height:200px !important;">
+                <table>
+                  <tr>
+                    <th>Start</th>
+                    <th>Tail</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Est Hrs</th>
+                    <th>Actual Hrs</th>
+                  </tr>
+                  <tr *ngFor="let detail of rowData.detail">
+                        <td>{{detail.start}}</td>
+                        <td>{{detail.tail}}</td>
+                        <td>{{detail.origin}}</td>
+                        <td>{{detail.destnation}}</td>
+                        <td>{{detail.estimatedHrs}}</td>
+                        <td>{{detail.actualHrs}}</td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr> -->
+
+
+          <!-- <tr *ngIf="rowData.toggle">
+            <td>
+              <table>
+                <tr>
+                  <th>Start</th>
+                  <th>Tail</th>
+                  <th>Origin</th>
+                  <th>Destination</th>
+                  <th>Est Hrs</th>
+                  <th>Actual Hrs</th>
+                </tr>
+                <tr *ngFor="let detail of rowData.detail">
+                      <td>{{detail.start}}</td>
+                      <td>{{detail.tail}}</td>
+                      <td>{{detail.origin}}</td>
+                      <td>{{detail.destnation}}</td>
+                      <td>{{detail.estimatedHrs}}</td>
+                      <td>{{detail.actualHrs}}</td>
+                </tr>
+              </table>
+            </td>
+        </tr> -->
       </table>
       </td>
     </tr>
-</table> -->
+</table>

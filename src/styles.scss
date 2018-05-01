@@ -86,3 +86,9 @@ li {
 mdb-select {
   height: 16px;
 }
+
+.collapse {
+    &.show {
+      height: 200px !important;
+    }
+}
