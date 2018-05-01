@@ -19,9 +19,9 @@ export class OperatorTransactionComponent implements OnInit {
   model1: any;
 
   cardData: any = [
-    { title: "Sales" , percent: 25 , value: "2000$" , icon: "fa fa-money" },
-    { title: "Business" , percent: 50 , value: "200$" , icon: "fa fa-calendar" },
-    { title: "Service" , percent: 100 , value: "5000$" , icon: "fa fa-plane" }
+    { title: "Sales" , percent: 25 , value: "$2000" , icon: "fa fa-money" },
+    { title: "Business" , percent: 50 , value: "$200" , icon: "fa fa-calendar" },
+    { title: "Service" , percent: 100 , value: "$5000" , icon: "fa fa-plane" }
   ];
 
   constructor(private appService : AppService) {
@@ -38,6 +38,7 @@ export class OperatorTransactionComponent implements OnInit {
     this.appService.getTableData().subscribe(
       data => {
         this.tableData = data;
+        console.log(this.tableData);
       },
       (err: HttpErrorResponse) => {
         console.log (err);
@@ -45,9 +46,6 @@ export class OperatorTransactionComponent implements OnInit {
     );
   }
 
-  searchData(startDate: string, endDate: string, showOnly: string, searchKeyword: any) {
-
-  };
 
   sortData(key) {
     this.tableData.sort((a: any, b: any): any => {

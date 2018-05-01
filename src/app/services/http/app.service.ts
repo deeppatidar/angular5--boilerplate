@@ -15,4 +15,8 @@ export class AppService {
         return this.http.get(url);
     };
 
+  public getTransactionData(): Observable<any> {
+    const url = '../../../assets/transactiontabledata.json';
+    return this.http.get(url);
+  }
 }

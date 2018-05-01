@@ -54,13 +54,14 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 
 //directives
 import { DropdownDirective } from '../../directives/dropdown.directive';
+import { TransactionTableComponent } from '../../shared-components/transaction-table/transaction-table.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent, OperatorTransactionComponent, BrokerTransactionComponent, OneskyTransactionComponent, TransactionComponent
+    AppComponent, LoginComponent, DashboardComponent, DefaultComponent , HeaderComponent, FooterComponent, FilterPipe, DropdownDirective, CardComponent, TableComponent, ChartComponent, OperatorTransactionComponent, BrokerTransactionComponent, OneskyTransactionComponent, TransactionComponent, TransactionTableComponent
   ],
   imports: [
     FormsModule,

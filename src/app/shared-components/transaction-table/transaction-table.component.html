@@ -1,0 +1,158 @@
+<div class="container-fluid card">
+  <div class="row table-heading">
+      <div class="col">
+        <div class="heading">
+        </div>
+      </div>
+      <div class="col">
+        <div class="heading">
+          Payment Status
+        </div>
+      </div>
+      <div class="col">
+        <div class="heading">
+          Trip Date
+        </div>
+      </div>
+      <div class="col">
+        <div class="heading">
+          Operator
+        </div>
+      </div>
+      <div class="col">
+        <div class="heading">
+          Trip #
+        </div>
+      </div>
+      <div class="col">
+        <div class="heading">
+          Payment #
+        </div>
+      </div>
+      <div class="col">
+        <div class="heading">
+          Est Hrs.
+        </div>
+      </div>
+      <div class="col">
+        <div class="heading">
+        Active Hrs.
+        </div>
+      </div>
+      <div class="col">
+        <div class="heading">
+          All Transactions
+        </div>
+      </div>
+  </div>
+  <div *ngFor="let rowData of tableData" (click)="toggle(rowData)">
+    <div class="row table-data waves-light">
+      <div class="col">
+        <i *ngIf="rowData.toggle" class="fa fa-angle-up"></i>
+        <i *ngIf="!rowData.toggle" class="fa fa-angle-down"></i>
+      </div>
+      <div class="col">
+        {{rowData.paymentStatus}}
+      </div>
+      <div class="col">
+    {{rowData.tripDate}}
+  </div>
+      <div class="col">
+        {{rowData.operator}}
+      </div>
+      <div class="col">
+        {{rowData.tripId}}
+      </div>
+      <div class="col">
+        {{rowData.payment}}
+      </div>
+      <div class="col">
+        {{rowData.estimatedhrs}}
+      </div>
+      <div class="col">
+        {{rowData.activeHrs}}
+      </div>
+      <div class="col">
+        {{rowData.paymentAmount}}
+      </div>
+    </div>
+    <div *ngIf="rowData.toggle" class="accordian-content">
+      <div class="row collapse-data">
+        <div class="col">
+          <div class="accordian-heading">Start</div>
+        </div>
+        <div class="col">
+          <div class="accordian-heading">Tail #</div>
+        </div>
+        <div class="col">
+          <div class="accordian-heading">Origin</div>
+        </div>
+        <div class="col">
+          <div class="accordian-heading">Destination</div>
+        </div>
+        <div class="col">
+          <div class="accordian-heading">Est Hrs.</div>
+        </div>
+        <div class="col">
+          <div class="accordian-heading">Active Hrs.</div>
+        </div>
+      </div>
+      <div *ngFor="let detail of rowData.detail">
+        <div class="row collapse-data">
+        <div class="col">{{detail.start}}</div>
+        <div class="col">{{detail.tail}}</div>
+        <div class="col">{{detail.origin}}</div>
+        <div class="col">{{detail.destination}}</div>
+        <div class="col">{{detail.estimatedHrs}}</div>
+        <div class="col">{{detail.activeHrs}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <table class="table table-hover mb-0">
+    <tr>
+      <td>
+        <table class="table table-hover mb-0">
+          <tr>
+            <td style="width:12%;"><a (click)="sortData('tripId')">Payment Status <i class="fa fa-sort ml-1"></i></a></td>
+            <td style="width:12%;"><a (click)="sortData('date')">Trip Date <i class="fa fa-sort ml-1"></i></a></td>
+            <td style="width:12%;"><a (click)="sortData('type')">Operator<i class="fa fa-sort ml-1" ></i></a></td>
+            <td style="width:12%;"><a (click)="sortData('name')">Trip #<i class="fa fa-sort ml-1"></i></a></td>
+            <td style="width:12%;"><a (click)="sortData('status')">Payment #<i class="fa fa-sort ml-1"></i></a></td>
+            <td style="width:12%;"><a  (click)="sortData('amount')">Est hrs<i class="fa fa-sort ml-1"></i></a></td>
+            <td style="width:12%;">Active Hrs</td>
+            <td style="width:12%;">Payment Amount</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr *ngFor="let rowData of tableData" (click)="toggle(rowData)">
+      <td>
+        <table class="table table-hover mb-0">
+          <tr>
+            <td style="width:12%;">{{rowData.paymentStatus}}</td>
+            <td style="width:12%;">{{rowData.tripDate}}</td>
+            <td style="width:12%;">{{rowData.operator}}</td>
+            <td style="width:12%;">{{rowData.tripId}}</td>
+            <td style="width:12%;">{{rowData.payment}}</td>
+            <td style="width:12%;">{{rowData.estimatedHrs}}</td>
+            <td style="width:12%;">{{rowData.activeHrs}}</td>
+            <td style="width:12%;">{{rowData.paymentAmount}}</td>
+          </tr>
+        <tr *ngIf="rowData.toggle">
+          <table class="table table-hover mb-0">
+            <tr *ngFor="let detail of rowData.detail">
+              <td>{{detail.start}}</td>
+              <td>{{detail.tail}}</td>
+              <td>{{detail.origin}}</td>
+              <td>{{detail.destnation}}</td>
+              <td>{{detail.estimatedHrs}}</td>
+              <td>{{detail.activeHrs}}</td>
+            <tr>
+          </table>
+        </tr>
+      </table>
+      </td>
+    </tr>
+</table> -->
