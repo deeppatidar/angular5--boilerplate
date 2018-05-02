@@ -1,9 +1,11 @@
 .footer {
+   background: #0099CC;
    bottom: 0;
    color: #FFFFFF;
    left: 0;
    position: fixed;
    width: 100%;
+   z-index:1000;
    &.footer-copyright {
 
    }

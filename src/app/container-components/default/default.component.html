@@ -1,16 +1,4 @@
-<div class="container-fluid">
-  <div class="row">
-    <app-header></app-header>
-  </div>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let card of cardData">
-      <app-card [cardTitle]="card.title" [progressPercent]="card.percent" [cardValue]="card.value" [cardIcon]="card.icon"></app-card>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <app-table></app-table>
-    </div>
-  </div>
-  <app-footer></app-footer>
-</div>
+
+<app-header></app-header>
+<router-outlet></router-outlet>
+<!-- <app-footer></app-footer> -->

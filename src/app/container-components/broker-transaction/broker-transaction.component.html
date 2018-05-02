@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="x-small col-sm-3 col-xs-2" *ngFor="let card of cardData">
+      <app-card [cardTitle]="card.title" [progressPercent]="card.percent" [cardValue]="card.value" [cardIcon]="card.icon"></app-card>
+    </div>
+    <div class="col-sm-3">
+      <p>Payment Detail : {{paymentDetail.paymentacc}}</p>
+      <p>BBVA acct : {{paymentDetail.BBVAacc}}</p>
+      <p>BBVA Acct type : {{paymentDetail.BBVATypeChecking}}</p>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-sm-2">
+      <mdb-select [options]="optionsSelect" placeholder="Choose your option"></mdb-select>
+    </div>
+    <div class="col-sm-2">
+      <mdb-select [options]="optionsSelect" placeholder="Choose your option"></mdb-select>
+    </div>
+    <div class="col-sm-2">
+      <mdb-date-picker name="startDate" [options]="startDate" [placeholder]="'Start date'" [(ngModel)]="model" required></mdb-date-picker>
+    </div>
+    <div class="col-sm-2">
+    <mdb-date-picker name="enddate" [options]="endDate" [placeholder]="'End date'" [(ngModel)]="model" required></mdb-date-picker>
+    </div>
+    <div class="col-sm-2">
+      <button class="btn btn-primary waves-light">Reset Filter</button>
+    </div>
+    <div class="col-sm-2">
+      <button class="btn btn-default waves-light">New Payment</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <mdb-tabset #staticTabs [buttonClass]="'nav-tabs tabs-4 pills-secondary white margin'" [contentClass]="''">
+         <mdb-tab heading="Confirmed Trip({{tripDetail.confirm}})">
+             <div class="row">
+                 <div class="col-12">
+                       <div class="table-wrapper">
+                          <app-transaction-table [tableData]="tableData"></app-transaction-table>
+                        </div>
+                    </div>
+                 </div>
+         </mdb-tab>
+         <mdb-tab heading="Completed({{tripDetail.completed}})">
+             <div class="row">
+                 <div class="col-12">
+                       <div class="px-2 table-wrapper">
+                          <app-transaction-table [tableData]="tableData"></app-transaction-table>
+                        </div>
+
+                 </div>
+             </div>
+         </mdb-tab>
+         <mdb-tab heading="Cancelled({{tripDetail.completed}})">
+             <div class="row">
+                 <div class="col-12">
+
+                       <div class="px-2 table-wrapper">
+                          <app-transaction-table [tableData]="tableData"></app-transaction-table>
+                        </div>
+
+                 </div>
+             </div>
+         </mdb-tab>
+         <mdb-tab heading="All transaction">
+             <div class="row">
+                 <div class="col-12">
+                       <div class="px-2 table-wrapper">
+                          <app-transaction-table [tableData]="tableData"></app-transaction-table>
+                        </div>
+
+                 </div>
+             </div>
+         </mdb-tab>
+       </mdb-tabset>
+
+    </div>
+  </div>
+</div>

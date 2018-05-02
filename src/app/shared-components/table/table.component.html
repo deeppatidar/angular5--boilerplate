@@ -1,63 +1,24 @@
-<div class="mt-5 sky-table">
-  <div class="card">
-      <div class="row px-4 sky-border">
-        <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-date-picker name="startdate" [options]="myDatePickerOptions" [placeholder]="'Start date'" [(ngModel)]="model" required></mdb-date-picker>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-date-picker name="enddate" [options]="myDatePickerOptions" [placeholder]="'End date'" [(ngModel)]="model1" required></mdb-date-picker>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-md-12">
-          <mdb-select [options]="optionsSelect" placeholder="Choose your option"></mdb-select>
-        </div>
-        <div  class="col-xl-3 col-lg-6 col-md-12">
-          <form class="form-inline mt-2 ml-2 ng-untouched ng-pristine ng-valid" novalidate="">
-            <input  class="form-control my-0 py-0" placeholder="Search" type="text">
-            <button  class="btn btn-sm btn-primary ml-2 px-2 waves-effect waves-light"><i
-              class="fa fa-search"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-      <div  class="view gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
-      <div class="table-title">
-        <a class="white-text mx-3" href="">Quotes</a>
-      </div>
-    </div>
-
-    <div class="px-4 table-wrapper">
-      <table class="table table-hover mb-0">
-        <thead>
-          <tr>
-            <th><a>Trip ID <i class="fa fa-sort ml-1"></i></a></th>
-            <th><a>Date <i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Type<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Name<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Status<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg"><a>Amount<i class="fa fa-sort ml-1"></i></a></th>
-            <th class="th-lg">View</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor= "let rowData of tableData">
-            <th scope="row">{{rowData.tripId}}</th>
-            <td>{{rowData.date}}</td>
-            <td><button type="button" class="btn sky-button" [ngClass]="rowData.type === 'Accepted' ? 'btn-success' : rowData.type === 'Completed' ? 'btn-primary' : rowData.type === 'Refunded' ? 'btn-warning' : 'btn-danger' ">{{rowData.type}}</button></td>
-            <td>{{rowData.name}}</td>
-            <td [ngClass]="rowData.status === 'Completed' ? 'completed' : 'pending'">{{rowData.status}}</td>
-            <td>{{rowData.amount}}</td>
-            <td><button type="button" class="btn btn-primary btn-rounded sky-button">Details</button></td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
-</div>
-<!--
-{{rowData.type}}
-<td>
-  <a class="blue-text"><i class="fa fa-user"></i></a>
-  <a class="teal-text"><i class="fa fa-pencil"></i></a>
-  <a class="red-text"><i class="fa fa-times"></i></a>
-</td>
-<td>aside</td>
-<td>sas</td> -->
+<table class="table table-hover mb-0">
+  <thead>
+    <tr>
+      <th><a (click)="sortData('tripId')">Trip ID <i class="fa fa-sort ml-1"></i></a></th>
+      <th><a (click)="sortData('date')">Date <i class="fa fa-sort ml-1"></i></a></th>
+      <th class="th-lg"><a (click)="sortData('type')">Type<i class="fa fa-sort ml-1" ></i></a></th>
+      <th class="th-lg"><a (click)="sortData('name')">Name<i class="fa fa-sort ml-1"></i></a></th>
+      <th class="th-lg"><a (click)="sortData('status')">Status<i class="fa fa-sort ml-1"></i></a></th>
+      <th class="th-lg"><a  (click)="sortData('amount')">Amount<i class="fa fa-sort ml-1"></i></a></th>
+      <th class="th-lg">View</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let rowData of tableData | filter: search">
+      <th scope="row">{{rowData.tripId}}</th>
+      <td>{{rowData.date}}</td>
+      <td><button type="button" class="btn sky-button" [ngClass]="rowData.type === 'Accepted' ? 'btn-success' : rowData.type === 'Completed' ? 'btn-primary' : rowData.type === 'Refunded' ? 'btn-warning' : 'btn-danger' ">{{rowData.type}}</button></td>
+      <td>{{rowData.name}}</td>
+      <td [ngClass]="rowData.status === 'Completed' ? 'completed' : 'pending'">{{rowData.status}}</td>
+      <td>{{rowData.amount}}</td>
+      <td><button type="button" class="btn btn-primary btn-rounded sky-button">Details</button></td>
+    </tr>
+  </tbody>
+</table>
