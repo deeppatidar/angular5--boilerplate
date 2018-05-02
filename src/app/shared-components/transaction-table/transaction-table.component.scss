@@ -14,25 +14,18 @@
   .table-data  {
     @include tablepadding;
     border-bottom: 2px solid #dee2e6;
-    transition: .2s ease-out;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     font-weight: 300;
-    transition:  20s ease-out;
   }
   .table-data:hover {
-      background-color: rgba(0, 0, 0, 0.075);
-      -webkit-transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.075);
   }
-  .table-data:active {
-    transition:  20s ease-out;
-  }
+
   i {
     font-weight: 800;
   }
   .accordian-content {
     margin-left: 7%;
     background: rgba(0, 0, 0, 0.075);
-    transition:  20s ease-out;
   }
   .collapse-data {
     @include tablepadding;
