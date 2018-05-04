@@ -66,3 +66,12 @@
 //   width: 100%;
 //   margin-bottom: 100px;
 // }
+
+@media screen and (max-width: 767px) {
+  .table-heading {
+    width: 710px;
+  }
+  .table-content {
+    width: 635px;
+  }
+}

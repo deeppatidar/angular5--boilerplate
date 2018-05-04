@@ -45,7 +45,7 @@
         </div>
       </div>
   </div>
-  <div class="hello" style="overflow-x:scroll;">
+  <div class="table-content">
     <div *ngFor="let rowData of tableData" (click)="toggle(rowData)">
       <div class="row table-data waves-light">
         <div class="col icon">
@@ -68,10 +68,10 @@
           {{rowData.payment}}
         </div>
         <div class="col">
-          {{rowData.estimatedhrs}}
+          {{rowData.estimatedHrs}}
         </div>
         <div class="col">
-          {{rowData.activeHrs}}
+          {{rowData.actualHrs}}
         </div>
         <div class="col">
           {{rowData.paymentAmount}}
