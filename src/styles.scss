@@ -20,7 +20,6 @@ mdb-tabset .white .active {
   background: none!important;
 }
 .nav-tabs {
-
   padding-bottom: 0px;
 }
 .pills-secondary {
@@ -54,11 +53,21 @@ mdb-tabset .margin li {
     display: block;
     padding: .5rem 1rem;
 }
+@media screen and(max-width:768px) {
+  .nav-link {
+      padding: 0.4rem 0px;
+
+  }
+
+  .nav-tabs {
+    padding: 0px;
+  }
+}
 .nav-item:hover .nav-link{
   padding-bottom: 9px;
 }
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+.nav-tabs .nav-item.show .nav-tabs .nav-link.active {
     color: #495057;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
